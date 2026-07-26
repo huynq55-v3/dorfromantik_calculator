@@ -1,10 +1,10 @@
-pub mod config_loader;
-pub mod save_decoder;
-pub mod tile_gen_configuration;
+pub mod config;
+pub mod core;
+pub mod utils;
 
-pub use config_loader::GameConfigFile;
-pub use save_decoder::{extract_session_data_from_save, SessionSaveData};
-pub use tile_gen_configuration::{GroupType, GroupTypeConfiguration, TileGenConfiguration};
+pub use config::{GroupTypeConfiguration, TileGenConfiguration};
+pub use core::GroupType;
+pub use utils::{extract_session_data_from_save, GameConfigFile, SessionSaveData};
 
 #[derive(Debug, Clone)]
 pub struct GameConfig {
