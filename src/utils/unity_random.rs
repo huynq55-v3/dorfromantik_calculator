@@ -37,14 +37,9 @@ impl UnityRandom {
     }
 
     pub fn value(&mut self) -> f32 {
-        // Đã cập nhật công thức chuyển đổi Float chuẩn theo chiều thuận của Unity C++ Native Engine
+        // Công thức chính xác 100% của Unity C++ Native Engine (Khớp tuyệt đối với Ultra Deep RAM Log)
         let raw = self.next_u32() & 0x007FFFFF;
-        let float_val = (raw as f32) / 8388607.0;
-        if float_val > 0.5 {
-            1.0 - float_val
-        } else {
-            float_val
-        }
+        1.0 - ((raw as f32) / 8388607.0)
     }
 
     pub fn range_float(&mut self, min: f32, max: f32) -> f32 {

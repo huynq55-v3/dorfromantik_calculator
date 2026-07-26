@@ -240,18 +240,19 @@ impl QuestSystemConfiguration {
         flag_quest_prob_mult: f32,
     ) {
         if self.quest_tile_collections.len() >= 5 {
+            // Index 0: Forest (41479), Index 1: Agriculture (41478), Index 2: TrainTrack (41480), Index 3: Village (41481), Index 4: Water (41482)
             self.quest_tile_collections[0].raw_probability = forest_prob;
             self.quest_tile_collections[1].raw_probability = agri_prob;
-            self.quest_tile_collections[2].raw_probability = village_prob;
-            self.quest_tile_collections[3].raw_probability = train_prob;
+            self.quest_tile_collections[2].raw_probability = train_prob;   // Index 2: TrainTrack (PathID 41480)
+            self.quest_tile_collections[3].raw_probability = village_prob; // Index 3: Village (PathID 41481)
             self.quest_tile_collections[4].raw_probability = water_prob;
         }
 
         let mut excluded = Vec::new();
         if forest_prob == 0.0 { excluded.push(1); }
         if agri_prob == 0.0 { excluded.push(2); }
-        if village_prob == 0.0 { excluded.push(3); }
-        if train_prob == 0.0 { excluded.push(4); }
+        if train_prob == 0.0 { excluded.push(3); }
+        if village_prob == 0.0 { excluded.push(4); }
         if water_prob == 0.0 { excluded.push(5); }
         self.exclude_types(excluded);
 
