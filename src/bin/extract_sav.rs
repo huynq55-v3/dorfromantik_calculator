@@ -1,19 +1,31 @@
-use dorfromantik_calculator::GameConfig;
+use dorfromantik_calculator::config::{CustomRuleLevelConfiguration, CustomRuleType};
+use dorfromantik_calculator::utils::save_decoder::extract_session_data_from_save;
+use std::fs;
 
 fn main() {
     let save_file = "AutoSave_MonthlyMode.sav";
-    let config_file = "game_config.cfg";
+    let rule_table_asset_path = "assets/CustomModeLevels_Default.json";
 
-    let config = GameConfig::load(save_file, config_file)
-        .unwrap_or_else(|err| panic!("Failed to load configuration: {}", err));
+    println!("=== DORFROMANTIK GAME SESSION DATA EXTRACTION ===");
 
-    println!("=== DORFROMANTIK GAME SESSION DATA ===");
-    println!("REAL_TILE_SEED={}", config.seed);
-    println!("CONFIG_STRING={}", config.config_string);
+    let rule_table = match fs::read_to_string(rule_table_asset_path) {
+        Ok(content) => CustomRuleLevelConfiguration::load_from_asset_json(&content)
+            .unwrap_or_else(|e| panic!("Failed to parse RuleTable JSON: {}", e)),
+        Err(e) => panic!("Failed to read {}: {}", rule_table_asset_path, e),
+    };
+
+    let save_data = extract_session_data_from_save(save_file)
+        .unwrap_or_else(|e| panic!("Failed to parse save file: {}", e));
+
+    println!("REAL_TILE_SEED={}", save_data.real_tile_seed);
+    println!("CONFIG_STRING={}", save_data.config_string);
     println!();
 
-    let save_data = &config.raw_save_data;
-    let cfg = &config.raw_config_file;
+    let village_level = save_data.get_level_index(1, 1, None);
+    let forest_level = save_data.get_level_index(2, 2, None);
+    let agri_level = save_data.get_level_index(3, 3, None);
+    let water_level = save_data.get_level_index(4, 4, None);
+    let train_level = save_data.get_level_index(5, 5, None);
 
     let stack_level = save_data.get_level_index(10, 6, None);
     let limit_level = save_data.get_level_index(11, 7, None);
@@ -24,33 +36,53 @@ fn main() {
     let flag_quest_level = save_data.get_level_index(15, 0, Some(2));
     let border_level = save_data.get_level_index(16, 0, Some(3));
 
-    let active_tile_stack_height = cfg.tile_gen.get_value(
-        &cfg.world.tile_stack_height.iter().map(|v| match v {
-            toml::Value::Float(f) => *f as f32,
-            toml::Value::Integer(i) => *i as f32,
-            _ => f32::INFINITY,
-        }).collect::<Vec<f32>>(),
-        stack_level,
-    );
-    let active_tile_limit = cfg.tile_gen.get_value(&cfg.world.tile_limit, limit_level);
-    let active_density = cfg.tile_gen.get_value(&cfg.tile_gen.density, density_level);
-    let active_quest_prob = cfg.tile_gen.get_value(&cfg.quest_system.quest_prob, quest_prob_level);
-    let active_quest_diff = cfg.tile_gen.get_value(&cfg.quest_system.quest_difficulty, quest_diff_level);
-    let active_flag_quest_prob = cfg.tile_gen.get_value(&cfg.quest_system.flag_quest_prob, flag_quest_level);
-
-    let raw_world_border = cfg.tile_gen.get_value(&cfg.world.world_border_radius, border_level);
-    let active_world_border = if raw_world_border < 0.0 { 0.0 } else { raw_world_border };
-
     println!("=== ACTIVE SESSION EXTRACTED VALUES ===");
-    for group_cfg in &config.tile_gen.global_group_type_probabilities {
-        println!("ACTIVE_{}Probability={}", group_cfg.group_type, group_cfg.raw_probability);
-    }
-
-    println!("ACTIVE_TileStackHeight={}", active_tile_stack_height);
-    println!("ACTIVE_TileLimit={}", active_tile_limit);
-    println!("ACTIVE_Density={}", active_density);
-    println!("ACTIVE_QuestProbability={}", active_quest_prob);
-    println!("ACTIVE_QuestDifficulty={}", active_quest_diff);
-    println!("ACTIVE_FlagQuestProbability={}", active_flag_quest_prob);
-    println!("ACTIVE_WorldBorderRadius={}", active_world_border);
+    println!(
+        "ACTIVE_VillageProbability={}",
+        rule_table.get_value(CustomRuleType::VillageProbability, village_level)
+    );
+    println!(
+        "ACTIVE_ForestProbability={}",
+        rule_table.get_value(CustomRuleType::ForestProbability, forest_level)
+    );
+    println!(
+        "ACTIVE_AgricultureProbability={}",
+        rule_table.get_value(CustomRuleType::AgricultureProbability, agri_level)
+    );
+    println!(
+        "ACTIVE_WaterProbability={}",
+        rule_table.get_value(CustomRuleType::WaterProbability, water_level)
+    );
+    println!(
+        "ACTIVE_TrainTrackProbability={}",
+        rule_table.get_value(CustomRuleType::TrainTrackProbability, train_level)
+    );
+    println!(
+        "ACTIVE_TileStackHeight={}",
+        rule_table.get_value(CustomRuleType::TileStackHeight, stack_level)
+    );
+    println!(
+        "ACTIVE_TileLimit={}",
+        rule_table.get_value(CustomRuleType::TileLimit, limit_level)
+    );
+    println!(
+        "ACTIVE_Density={}",
+        rule_table.get_value(CustomRuleType::Density, density_level)
+    );
+    println!(
+        "ACTIVE_QuestProbability={}",
+        rule_table.get_value(CustomRuleType::QuestProbability, quest_prob_level)
+    );
+    println!(
+        "ACTIVE_QuestDifficulty={}",
+        rule_table.get_value(CustomRuleType::QuestDifficulty, quest_diff_level)
+    );
+    println!(
+        "ACTIVE_FlagQuestProbability={}",
+        rule_table.get_value(CustomRuleType::FlagQuestProbability, flag_quest_level)
+    );
+    println!(
+        "ACTIVE_WorldBorderRadius={}",
+        rule_table.get_value(CustomRuleType::WorldBorderRadius, border_level)
+    );
 }

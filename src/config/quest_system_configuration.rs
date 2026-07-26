@@ -1,4 +1,6 @@
 use serde::{Deserialize, Serialize};
+use crate::utils::UnityRandom;
+use crate::config::TileGenFilter;
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -190,6 +192,8 @@ pub struct QuestSystemConfiguration {
     pub exponential_difficulty_increase_factor: f32,
     pub quest_spawn_tile_limit: i32,
     pub quest_tile_collections: Vec<QuestTileCollection>,
+    #[serde(skip)]
+    pub excluded_group_types: Vec<usize>,
 }
 
 impl QuestSystemConfiguration {
@@ -212,10 +216,142 @@ impl QuestSystemConfiguration {
             exponential_difficulty_increase_factor: data.exponential_difficulty_increase_factor,
             quest_spawn_tile_limit: data.quest_spawn_tile_limit,
             quest_tile_collections: data.quest_tile_collections,
+            excluded_group_types: Vec::new(),
         };
 
         config.update_values(false);
         Ok(config)
+    }
+
+    pub fn exclude_types(&mut self, excluded: Vec<usize>) {
+        self.excluded_group_types = excluded;
+    }
+
+    pub fn apply_session_settings(
+        &mut self,
+        village_prob: f32,
+        forest_prob: f32,
+        agri_prob: f32,
+        water_prob: f32,
+        train_prob: f32,
+        density: f32,
+        quest_prob_mult: f32,
+        quest_diff_mult: f32,
+        flag_quest_prob_mult: f32,
+    ) {
+        if self.quest_tile_collections.len() >= 5 {
+            self.quest_tile_collections[0].raw_probability = forest_prob;
+            self.quest_tile_collections[1].raw_probability = agri_prob;
+            self.quest_tile_collections[2].raw_probability = village_prob;
+            self.quest_tile_collections[3].raw_probability = train_prob;
+            self.quest_tile_collections[4].raw_probability = water_prob;
+        }
+
+        let mut excluded = Vec::new();
+        if forest_prob == 0.0 { excluded.push(1); }
+        if agri_prob == 0.0 { excluded.push(2); }
+        if village_prob == 0.0 { excluded.push(3); }
+        if train_prob == 0.0 { excluded.push(4); }
+        if water_prob == 0.0 { excluded.push(5); }
+        self.exclude_types(excluded);
+
+        for col in &mut self.quest_tile_collections {
+            for sub in &mut col.sub_collections {
+                let exponent = (sub.occupied_edges + 1) as f32;
+                sub.sub_collection_raw_probability *= density.powf(exponent);
+            }
+        }
+
+        self.set_global_multiplier_values(quest_prob_mult, quest_diff_mult, flag_quest_prob_mult);
+        self.update_values(false);
+    }
+
+    pub fn get_random_quest_tile_filtered(
+        &self,
+        rng: &mut UnityRandom,
+        filter: TileGenFilter,
+    ) -> (String, String) {
+        let valid_cols: Vec<&QuestTileCollection> = self
+            .quest_tile_collections
+            .iter()
+            .filter(|c| c.raw_probability > 0.0)
+            .collect();
+
+        if valid_cols.is_empty() {
+            return ("Unknown".to_string(), "QuestTile_Generic".to_string());
+        }
+
+        let total_col_weight: f32 = valid_cols.iter().map(|c| c.raw_probability).sum();
+        let col_roll = rng.range_float(0.0, total_col_weight);
+
+        let mut roll = col_roll;
+        let mut chosen_col = valid_cols[0];
+        for c in &valid_cols {
+            if roll <= c.raw_probability {
+                chosen_col = c;
+                break;
+            }
+            roll -= c.raw_probability;
+        }
+
+        let valid_subs: Vec<&QuestTileSubCollection> = chosen_col
+            .sub_collections
+            .iter()
+            .filter(|s| {
+                if s.sub_collection_raw_probability <= 0.0 {
+                    return false;
+                }
+                if filter == TileGenFilter::AtLeastTwoEmptyEdges && s.occupied_edges >= 5 {
+                    return false;
+                }
+                true
+            })
+            .collect();
+
+        if valid_subs.is_empty() {
+            return ("Unknown".to_string(), "QuestTile_Generic".to_string());
+        }
+
+        let total_sub_weight: f32 = valid_subs.iter().map(|s| s.sub_collection_raw_probability).sum();
+        let sub_roll = rng.range_float(0.0, total_sub_weight);
+
+        let mut roll2 = sub_roll;
+        let mut chosen_sub = valid_subs[0];
+        for s in &valid_subs {
+            if roll2 <= s.sub_collection_raw_probability {
+                chosen_sub = s;
+                break;
+            }
+            roll2 -= s.sub_collection_raw_probability;
+        }
+
+        let valid_opts: Vec<&QuestTileOption> = chosen_sub
+            .quest_tiles
+            .iter()
+            .filter(|o| o.probability > 0.0)
+            .collect();
+
+        if !valid_opts.is_empty() {
+            let total_opt_weight: f32 = valid_opts.iter().map(|o| o.probability).sum();
+            let _opt_roll = rng.range_float(0.0, total_opt_weight);
+        }
+
+        let prefab_name = match chosen_sub.name.as_str() {
+            "Village 2AV" => "QuestTile_Village_2AV",
+            "Train 2CT" => "QuestTile_Train_2CT_Locomotive",
+            "Train 2CT Locomotive" => "QuestTile_Train_2CT_Locomotive",
+            "Train 2CT 1AF 1AV" => "QuestTile_Train_2CT-1AF-1AV_Locomotive",
+            "Train 2CT 1AF 1AV Locomotive" => "QuestTile_Train_2CT-1AF-1AV_Locomotive",
+            "Village 3AV 3AF" => "QuestTile_Village_3AV_3AF",
+            "Train 2BT 3AV 1AV" => "QuestTile_Train_2BT-3AV-1AV",
+            _ => &chosen_sub.name,
+        };
+
+        ("Quest".to_string(), prefab_name.to_string())
+    }
+
+    pub fn get_random_quest_tile(&self, rng: &mut UnityRandom) -> (String, String) {
+        self.get_random_quest_tile_filtered(rng, TileGenFilter::None)
     }
 
     pub fn quest_tile_probability(&self, active_quest_count: usize, total_tile_count: usize) -> f32 {
