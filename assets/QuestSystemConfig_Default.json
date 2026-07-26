@@ -1,0 +1,1490 @@
+{
+	"m_CorrespondingSourceObject": { "m_FileID": 0, "m_PathID": 0 },
+	"m_EditorClassIdentifier": "",
+	"m_EditorHideFlags": 0,
+	"m_Enabled": 1,
+	"m_GameObject": { "m_FileID": 0, "m_PathID": 0 },
+	"m_HideFlags": 0,
+	"m_Name": "QuestSystemConfig_Default",
+	"m_PrefabAsset": { "m_FileID": 0, "m_PathID": 0 },
+	"m_PrefabInstance": { "m_FileID": 0, "m_PathID": 0 },
+	"m_Script": { "m_FileID": 1, "m_PathID": 415 },
+	"m_Structure": {
+		"autoUpdate": true,
+		"questTileProbabilityCurve": {
+			"m_Curve": [
+				{
+					"time": 0,
+					"value": 1,
+					"inSlope": -0.13571428,
+					"outSlope": -0.77349484,
+					"tangentMode": 0,
+					"weightedMode": 0,
+					"inWeight": 0,
+					"outWeight": 0.64500016
+				},
+				{
+					"time": 1,
+					"value": 0.5,
+					"inSlope": -0.29323003,
+					"outSlope": -0.29323003,
+					"tangentMode": 0,
+					"weightedMode": 0,
+					"inWeight": 0.33333334,
+					"outWeight": 0.33333334
+				},
+				{
+					"time": 1.9681778,
+					"value": 0.33,
+					"inSlope": -0.06280965,
+					"outSlope": -0.06280965,
+					"tangentMode": 0,
+					"weightedMode": 0,
+					"inWeight": 0.33333334,
+					"outWeight": 1
+				},
+				{
+					"time": 8,
+					"value": 0.05,
+					"inSlope": -0.046420466,
+					"outSlope": -0.046420466,
+					"tangentMode": 0,
+					"weightedMode": 0,
+					"inWeight": 0.33333334,
+					"outWeight": 0.33333334
+				}
+			],
+			"m_PreInfinity": 2,
+			"m_PostInfinity": 2,
+			"m_RotationOrder": 4
+		},
+		"displayLevel": 0,
+		"questProbabilities": [
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41508 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 1
+			},
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41509 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 0,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						},
+						{
+							"time": 5,
+							"value": 0.2,
+							"inSlope": Infinity,
+							"outSlope": 0.053333335,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 20,
+							"value": 1,
+							"inSlope": 0.053333335,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": -0,
+							"outSlope": 0.018,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 0
+			},
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41510 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": Infinity,
+							"outSlope": 0.018,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 1
+			},
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41514 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": Infinity,
+							"outSlope": 0.018,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 1
+			},
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41515 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 0,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						},
+						{
+							"time": 5,
+							"value": 0.2,
+							"inSlope": Infinity,
+							"outSlope": 0.053333335,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 20,
+							"value": 1,
+							"inSlope": 0.053333335,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0.018,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 0
+			},
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41512 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": Infinity,
+							"outSlope": 0.018,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 1
+			},
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41513 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 0,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						},
+						{
+							"time": 5,
+							"value": 0.2,
+							"inSlope": Infinity,
+							"outSlope": 0.053333335,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 20,
+							"value": 1,
+							"inSlope": 0.053333335,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0.018,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 0
+			},
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41517 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": Infinity,
+							"outSlope": 0.018,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 1
+			},
+			{
+				"quest": { "m_FileID": 0, "m_PathID": 41518 },
+				"probabilityCurve": {
+					"m_Curve": [
+						{
+							"time": 0,
+							"value": 0,
+							"inSlope": 0,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						},
+						{
+							"time": 5,
+							"value": 0.2,
+							"inSlope": Infinity,
+							"outSlope": 0.053333335,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 20,
+							"value": 1,
+							"inSlope": 0.053333335,
+							"outSlope": 0,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0.33333334,
+							"outWeight": 0.33333334
+						},
+						{
+							"time": 50,
+							"value": 1,
+							"inSlope": 0,
+							"outSlope": 0.018,
+							"tangentMode": 0,
+							"weightedMode": 0,
+							"inWeight": 0,
+							"outWeight": 0
+						}
+					],
+					"m_PreInfinity": 2,
+					"m_PostInfinity": 2,
+					"m_RotationOrder": 4
+				},
+				"_displayProbability": 0
+			}
+		],
+		"globalLockQuestProbability": {
+			"quest": { "m_FileID": 0, "m_PathID": 41511 },
+			"probabilityCurve": {
+				"m_Curve": [
+					{
+						"time": 0,
+						"value": 0,
+						"inSlope": 0,
+						"outSlope": 0,
+						"tangentMode": 0,
+						"weightedMode": 0,
+						"inWeight": 0,
+						"outWeight": 0.33333334
+					},
+					{
+						"time": 3,
+						"value": 0,
+						"inSlope": -0,
+						"outSlope": 0.14285715,
+						"tangentMode": 0,
+						"weightedMode": 0,
+						"inWeight": 0.33333334,
+						"outWeight": 0.33333334
+					},
+					{
+						"time": 10,
+						"value": 1,
+						"inSlope": 0.14285715,
+						"outSlope": 0,
+						"tangentMode": 0,
+						"weightedMode": 0,
+						"inWeight": 0.33333334,
+						"outWeight": 0.33333334
+					}
+				],
+				"m_PreInfinity": 2,
+				"m_PostInfinity": 2,
+				"m_RotationOrder": 4
+			},
+			"_displayProbability": 0
+		},
+		"globalQuestProbabilityMultiplier": 1,
+		"globalFlagQuestProbabilityMultiplier": 0.3,
+		"exponentialDifficultyIncreaseFactor": 1,
+		"questSpawnTileLimit": -1,
+		"questTileCollections": [
+			{
+				"groupType": { "m_FileID": 0, "m_PathID": 41479 },
+				"rawProbability": 10,
+				"collectionProbability": 0.22727273,
+				"_displayProbability": 113.63637,
+				"defaultQuestOptions": [
+					{ "m_FileID": 0, "m_PathID": 41510 }
+				],
+				"subCollections": [
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41479 },
+						"name": "Forest 1AF",
+						"allSegmentTypes": [
+							1
+						],
+						"occupiedEdges": 1,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.037257824,
+						"_displayProbability": 18.628912,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14433 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14404 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41321 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14428 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41345 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14420 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41339 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41479 },
+						"name": "Forest 1AF 2AW",
+						"allSegmentTypes": [
+							1,
+							4
+						],
+						"occupiedEdges": 3,
+						"subCollectionRawProbability": 1,
+						"subCollectionProbability": 0.0037257825,
+						"_displayProbability": 1.8628912,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14455 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14421 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41321 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41479 },
+						"name": "Forest 2AF",
+						"allSegmentTypes": [
+							1
+						],
+						"occupiedEdges": 2,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.037257824,
+						"_displayProbability": 18.628912,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14449 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14436 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41321 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14467 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41345 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14451 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41339 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41479 },
+						"name": "Forest 3AF",
+						"allSegmentTypes": [
+							1
+						],
+						"occupiedEdges": 3,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.037257824,
+						"_displayProbability": 18.628912,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14441 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14430 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41321 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14413 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41345 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14448 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41339 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41479 },
+						"name": "Forest 4AF",
+						"allSegmentTypes": [
+							1
+						],
+						"occupiedEdges": 4,
+						"subCollectionRawProbability": 15,
+						"subCollectionProbability": 0.055886738,
+						"_displayProbability": 27.943369,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 11907 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 11905 },
+								"probability": 0.25,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41329 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41479 },
+						"name": "Forest 6AF",
+						"allSegmentTypes": [
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 15,
+						"subCollectionProbability": 0.055886738,
+						"_displayProbability": 27.943369,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 11910 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 11904 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41321 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 11908 },
+								"probability": 0.5,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41329 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 11906 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41345 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 11909 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41339 }
+							}
+						]
+					}
+				]
+			},
+			{
+				"groupType": { "m_FileID": 0, "m_PathID": 41478 },
+				"rawProbability": 10,
+				"collectionProbability": 0.22727273,
+				"_displayProbability": 113.63637,
+				"defaultQuestOptions": [
+					{ "m_FileID": 0, "m_PathID": 41508 },
+					{ "m_FileID": 0, "m_PathID": 41509 }
+				],
+				"subCollections": [
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41478 },
+						"name": "Fields 2AA",
+						"allSegmentTypes": [
+							2
+						],
+						"occupiedEdges": 2,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.039872408,
+						"_displayProbability": 19.936203,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 15194 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41478 },
+						"name": "Fields 2AA 2AV 1AV",
+						"allSegmentTypes": [
+							2,
+							0
+						],
+						"occupiedEdges": 5,
+						"subCollectionRawProbability": 7,
+						"subCollectionProbability": 0.027910687,
+						"_displayProbability": 13.955343,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 15193 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41478 },
+						"name": "Fields 2AA 4AF",
+						"allSegmentTypes": [
+							2,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 5,
+						"subCollectionProbability": 0.019936204,
+						"_displayProbability": 9.9681015,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14456 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14431 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41277 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14407 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41301 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14398 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41327 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41478 },
+						"name": "Fields 3AA 1AV",
+						"allSegmentTypes": [
+							2,
+							0
+						],
+						"occupiedEdges": 4,
+						"subCollectionRawProbability": 5,
+						"subCollectionProbability": 0.019936204,
+						"_displayProbability": 9.9681015,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14471 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14452 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41277 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14409 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41301 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41478 },
+						"name": "Fields 4BA 1AF 1AF",
+						"allSegmentTypes": [
+							2,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 5,
+						"subCollectionProbability": 0.019936204,
+						"_displayProbability": 9.9681015,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14402 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14453 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41326 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41478 },
+						"name": "Fields 4A 2AF",
+						"allSegmentTypes": [
+							2,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.039872408,
+						"_displayProbability": 19.936203,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14414 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14415 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41301 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41478 },
+						"name": "Fields 6A",
+						"allSegmentTypes": [
+							2
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 15,
+						"subCollectionProbability": 0.059808616,
+						"_displayProbability": 29.904308,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14423 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14408 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41277 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14450 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41328 }
+							}
+						]
+					}
+				]
+			},
+			{
+				"groupType": { "m_FileID": 0, "m_PathID": 41481 },
+				"rawProbability": 10,
+				"collectionProbability": 0.22727273,
+				"_displayProbability": 113.63637,
+				"defaultQuestOptions": [
+					{ "m_FileID": 0, "m_PathID": 41514 },
+					{ "m_FileID": 0, "m_PathID": 41515 }
+				],
+				"subCollections": [
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41481 },
+						"name": "Village 2AV",
+						"allSegmentTypes": [
+							0
+						],
+						"occupiedEdges": 2,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.052854124,
+						"_displayProbability": 26.427063,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14411 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41481 },
+						"name": "Village 3AV 3AF",
+						"allSegmentTypes": [
+							0,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.052854124,
+						"_displayProbability": 26.427063,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14470 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14466 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41310 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14447 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41314 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14397 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41333 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41481 },
+						"name": "Village 4BV 1AF 1AF",
+						"allSegmentTypes": [
+							0,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 3,
+						"subCollectionProbability": 0.015856238,
+						"_displayProbability": 7.928119,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14401 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14464 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41312 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14400 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41314 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14418 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41333 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41481 },
+						"name": "Village 5AV 1AF",
+						"allSegmentTypes": [
+							0,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.052854124,
+						"_displayProbability": 26.427063,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14403 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14440 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41333 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41481 },
+						"name": "Village 6AV",
+						"allSegmentTypes": [
+							0
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.052854124,
+						"_displayProbability": 26.427063,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14445 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14442 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41311 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14461 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41314 }
+							}
+						]
+					}
+				]
+			},
+			{
+				"groupType": { "m_FileID": 0, "m_PathID": 41480 },
+				"rawProbability": 6,
+				"collectionProbability": 0.13636364,
+				"_displayProbability": 68.18182,
+				"defaultQuestOptions": [
+					{ "m_FileID": 0, "m_PathID": 41512 },
+					{ "m_FileID": 0, "m_PathID": 41513 }
+				],
+				"subCollections": [
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41480 },
+						"name": "Train 2BT 3AF 1AF",
+						"allSegmentTypes": [
+							3,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.026223777,
+						"_displayProbability": 13.111889,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 3697 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41480 },
+						"name": "Train 2BT 3AA 1AA",
+						"allSegmentTypes": [
+							3,
+							2
+						],
+						"occupiedEdges": 5,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.026223777,
+						"_displayProbability": 13.111889,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 3698 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41480 },
+						"name": "Train 2BT 3AV 1AV",
+						"allSegmentTypes": [
+							3,
+							0
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 7,
+						"subCollectionProbability": 0.018356644,
+						"_displayProbability": 9.178322,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 3699 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41480 },
+						"name": "Train 2CT",
+						"allSegmentTypes": [
+							3
+						],
+						"occupiedEdges": 2,
+						"subCollectionRawProbability": 20,
+						"subCollectionProbability": 0.052447554,
+						"_displayProbability": 26.223778,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 7595 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 7596 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41293 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41480 },
+						"name": "Train 2CT 1AF 1AV",
+						"allSegmentTypes": [
+							3,
+							1,
+							0
+						],
+						"occupiedEdges": 4,
+						"subCollectionRawProbability": 5,
+						"subCollectionProbability": 0.013111888,
+						"_displayProbability": 6.5559444,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 7592 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 7594 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41293 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41480 },
+						"name": "_DEPRECATED (usedForOldSavegames)",
+						"allSegmentTypes": [
+							3
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 0,
+						"subCollectionProbability": 0,
+						"_displayProbability": 0,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 12667 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							}
+						]
+					}
+				]
+			},
+			{
+				"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+				"rawProbability": 8,
+				"collectionProbability": 0.18181819,
+				"_displayProbability": 90.909096,
+				"defaultQuestOptions": [
+					{ "m_FileID": 0, "m_PathID": 41517 },
+					{ "m_FileID": 0, "m_PathID": 41518 }
+				],
+				"subCollections": [
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 2B 1AF 3AF",
+						"allSegmentTypes": [
+							4,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.02020202,
+						"_displayProbability": 10.10101,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14439 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14434 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41297 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 2CW",
+						"allSegmentTypes": [
+							4
+						],
+						"occupiedEdges": 2,
+						"subCollectionRawProbability": 15,
+						"subCollectionProbability": 0.030303031,
+						"_displayProbability": 15.151516,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14432 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14412 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41297 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 2CW 2AV 2AV",
+						"allSegmentTypes": [
+							4,
+							0
+						],
+						"occupiedEdges": 5,
+						"subCollectionRawProbability": 5,
+						"subCollectionProbability": 0.01010101,
+						"_displayProbability": 5.050505,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14417 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14424 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41305 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 2CW 2AF 1AA",
+						"allSegmentTypes": [
+							4,
+							1,
+							2
+						],
+						"occupiedEdges": 5,
+						"subCollectionRawProbability": 5,
+						"subCollectionProbability": 0.01010101,
+						"_displayProbability": 5.050505,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14465 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14416 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41305 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 2CW 2AA 1AV",
+						"allSegmentTypes": [
+							4,
+							2,
+							0
+						],
+						"occupiedEdges": 5,
+						"subCollectionRawProbability": 5,
+						"subCollectionProbability": 0.01010101,
+						"_displayProbability": 5.050505,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14458 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14435 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41305 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 2CW 2AF 2AA",
+						"allSegmentTypes": [
+							4,
+							1,
+							2
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 5,
+						"subCollectionProbability": 0.01010101,
+						"_displayProbability": 5.050505,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14405 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14444 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41359 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 3AW 3AF",
+						"allSegmentTypes": [
+							4,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.02020202,
+						"_displayProbability": 10.10101,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14443 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14426 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41358 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14468 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41352 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 4AW 2AF",
+						"allSegmentTypes": [
+							4,
+							1
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 10,
+						"subCollectionProbability": 0.02020202,
+						"_displayProbability": 10.10101,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14463 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14422 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41361 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14459 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41352 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "Water 6AW",
+						"allSegmentTypes": [
+							4
+						],
+						"occupiedEdges": 6,
+						"subCollectionRawProbability": 25,
+						"subCollectionProbability": 0.050505053,
+						"_displayProbability": 25.252527,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14419 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14446 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41297 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14462 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41360 }
+							},
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 14410 },
+								"probability": 0.5,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 41332 }
+							}
+						]
+					},
+					{
+						"groupType": { "m_FileID": 0, "m_PathID": 41482 },
+						"name": "_DEPRECATED (usedForOldSavegames)",
+						"allSegmentTypes": [
+							4
+						],
+						"occupiedEdges": 12,
+						"subCollectionRawProbability": 0,
+						"subCollectionProbability": 0,
+						"_displayProbability": 0,
+						"questTiles": [
+							{
+								"questTile": { "m_FileID": 0, "m_PathID": 12188 },
+								"probability": 1,
+								"questOptions": [],
+								"unlockReward": { "m_FileID": 0, "m_PathID": 0 }
+							}
+						]
+					}
+				]
+			}
+		],
+		"rewardSystem": { "m_FileID": 0, "m_PathID": 41497 },
+		"excludedGroupTypes": []
+	}
+}

@@ -1,0 +1,246 @@
+{
+	"m_CorrespondingSourceObject": { "m_FileID": 0, "m_PathID": 0 },
+	"m_EditorClassIdentifier": "",
+	"m_EditorHideFlags": 0,
+	"m_Enabled": 1,
+	"m_GameObject": { "m_FileID": 0, "m_PathID": 0 },
+	"m_HideFlags": 0,
+	"m_Name": "CustomModeLevels_Default",
+	"m_PrefabAsset": { "m_FileID": 0, "m_PathID": 0 },
+	"m_PrefabInstance": { "m_FileID": 0, "m_PathID": 0 },
+	"m_Script": { "m_FileID": 1, "m_PathID": 2451 },
+	"m_Structure": {
+		"defaultLevels": [
+			{
+				"ruleType": 1,
+				"value": 5
+			},
+			{
+				"ruleType": 2,
+				"value": 5
+			},
+			{
+				"ruleType": 3,
+				"value": 5
+			},
+			{
+				"ruleType": 4,
+				"value": 4
+			},
+			{
+				"ruleType": 5,
+				"value": 3
+			},
+			{
+				"ruleType": 10,
+				"value": 3
+			},
+			{
+				"ruleType": 11,
+				"value": 1
+			},
+			{
+				"ruleType": 12,
+				"value": 5
+			},
+			{
+				"ruleType": 13,
+				"value": 5
+			},
+			{
+				"ruleType": 14,
+				"value": 4
+			},
+			{
+				"ruleType": 15,
+				"value": 4
+			},
+			{
+				"ruleType": 16,
+				"value": 1
+			}
+		],
+		"probabilityByLevel": [
+			{
+				"ruleType": 1,
+				"probabilityByLevel": [
+					-1,
+					0,
+					125,
+					250,
+					375,
+					500,
+					625,
+					750,
+					875,
+					1000
+				]
+			},
+			{
+				"ruleType": 2,
+				"probabilityByLevel": [
+					-1,
+					0,
+					125,
+					250,
+					375,
+					500,
+					625,
+					750,
+					875,
+					1000
+				]
+			},
+			{
+				"ruleType": 3,
+				"probabilityByLevel": [
+					-1,
+					0,
+					125,
+					250,
+					375,
+					500,
+					625,
+					750,
+					875,
+					1000
+				]
+			},
+			{
+				"ruleType": 4,
+				"probabilityByLevel": [
+					-1,
+					0,
+					125,
+					250,
+					375,
+					500,
+					625,
+					750,
+					875,
+					1000
+				]
+			},
+			{
+				"ruleType": 5,
+				"probabilityByLevel": [
+					-1,
+					0,
+					125,
+					250,
+					375,
+					500,
+					625,
+					750,
+					875,
+					1000
+				]
+			},
+			{
+				"ruleType": 10,
+				"probabilityByLevel": [
+					-1,
+					10,
+					25,
+					40,
+					50,
+					75,
+					100,
+					250,
+					500,
+					"inf"
+				]
+			},
+			{
+				"ruleType": 11,
+				"probabilityByLevel": [
+					-1,
+					0,
+					25,
+					50,
+					75,
+					100,
+					150,
+					250,
+					500,
+					1000
+				]
+			},
+			{
+				"ruleType": 12,
+				"probabilityByLevel": [
+					-1,
+					0.6,
+					0.7,
+					0.8,
+					0.9,
+					1,
+					1.1,
+					1.2,
+					1.3,
+					1.4
+				]
+			},
+			{
+				"ruleType": 13,
+				"probabilityByLevel": [
+					-1,
+					0,
+					0.25,
+					0.5,
+					0.75,
+					1,
+					1.25,
+					1.5,
+					2,
+					3
+				]
+			},
+			{
+				"ruleType": 14,
+				"probabilityByLevel": [
+					-1,
+					0.25,
+					0.5,
+					0.75,
+					1,
+					1.5,
+					2,
+					3,
+					4,
+					5
+				]
+			},
+			{
+				"ruleType": 15,
+				"probabilityByLevel": [
+					-1,
+					0,
+					0.1,
+					0.2,
+					0.3,
+					0.4,
+					0.5,
+					0.75,
+					0.9,
+					1
+				]
+			},
+			{
+				"ruleType": 16,
+				"probabilityByLevel": [
+					-1,
+					0,
+					3,
+					4,
+					5,
+					6,
+					8,
+					10,
+					12,
+					15
+				]
+			}
+		]
+	}
+}
