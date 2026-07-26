@@ -1,0 +1,116 @@
+Dưới đây là **danh mục tổng hợp toàn bộ các Class và Method (Hàm)** liên quan đến **Sinh Tile (Tile Spawn)** và **Quản lý Quest (Quest Manager)** được bóc tách trực tiếp từ mã nguồn C# gốc của Dorfromantik:
+
+---
+
+### 1. NÓM 1: CÁC CLASS SINH TILE VÀ KHỞI TẠO (TILE SPAWN CORE)
+
+#### 📦 Class: `TileGenerator` (Trái tim sinh bài)
+* `SetSeed(int seed)`: Nạp Master Seed cho trận đấu.
+
+public void SetSeed(int seed)
+	{
+		this.TileGenerationSeed = seed;
+		Random.InitState(seed);
+		this.tileSeedIncrementStep = Random.Range(-100000, 100000);
+		Randomizer.RandomizeSeed();
+	}
+
+* `SetConfiguration(TileGenConfiguration targetConfiguration)`: Nạp bảng trọng số cấu hình.
+
+// Token: 0x06000AC1 RID: 2753 RVA: 0x00030E8F File Offset: 0x0002F08F
+	public void SetConfiguration(TileGenConfiguration targetConfiguration)
+	{
+		this.configuration = targetConfiguration;
+	}
+    
+* `GenerateTile(TileSlot tileSlot, float questProbability)`: **Hàm sinh Tile chính** (điều hướng ra Bài Thường hay Bài Quest).
+* `GenerateBaseTile(int tileSeed)`: Hàm sinh Bài Thường thuần túy.
+* `GetNextTileSeed()`: Lấy Sub-Tile Seed tiếp theo từ Master PRNG Stream.
+* `SelectGroupType()`: Roll bốc chọn loại đất (`Agri`, `Forest`, `Village`, `Train`, `Water`).
+* `SelectPreset()`: Roll bốc chọn mẫu mảnh ghép 3D (`TilePreset`).
+* `RollRotation()`: Roll góc xoay 0°, 60°, 120°, 180°, 240°, 300°.
+* `OnTileGenerated` *(Event)*: Bắn sự kiện mỗi khi 1 Tile vừa được tạo xong.
+
+#### 📦 Class: `MatchingTileGenerator` (Sinh Tile khớp vị trí)
+* `GenerateFittingTile(TileSlot targetTileSlot)`: Sinh Tile vừa vặn với các ô xung quanh (dùng cho Hole Filler Tool / Creative Mode).
+* `PreventAdaptiveSegmentsEndingOn(TileSlot targetTileSlot)`: Chặn sinh mảnh thích ứng kết thúc tại vị trí chỉ định.
+
+#### 📦 Class: `TileFactory` (Nhà máy dựng mô hình 3D)
+* `CreateTile(GroupType groupType, TilePresetConfiguration preset)`: Dựng đối tượng `Tile` bài thường.
+* `CreateQuestTile(QuestTileSubCollection subCollection)`: Dựng đối tượng `QuestTile` bài quest.
+* `InitializePrebuiltTile(Tile tile)`: Khởi tạo dữ liệu cho Tile dựng sẵn.
+
+#### 📦 Class: `Randomizer` (Bộ công cụ Wrapper PRNG)
+* `GetRandomSeed()`: Lấy một con số Seed ngẫu nhiên mới.
+* `RandomizeSeed()`: Trả lại trạng thái Seed mặc định sau khi xong tác vụ phụ.
+* `SelectWeightedRandom<T>(List<WeightedItem<T>> items)`: Thuật toán bốc thăm ngẫu nhiên theo Trọng số (`Random.Range(0f, totalWeight)`).
+
+---
+
+### 2. NHÓM 2: CÁC CLASS QUẢN LÝ QUEST (QUEST SYSTEM)
+
+#### 📦 Class: `QuestManager` (Quản lý trạng thái Quest)
+* `SetConfiguration(QuestSystemConfiguration config)`: Nạp cấu hình Quest.
+* `ShouldGenerateQuest(float questProbability)`: Kiểm tra xem lượt rút tới có được phép sinh Quest hay không (`activeQuests < 3` hoặc `cooldown == 0`).
+* `GenerateQuestTile(int tileSeed)`: Gọi quy trình sinh Tile Quest.
+* `AttachQuest(QuestTile questTile)`: Gắn thành phần Quest lên Tile.
+* `CalculateTargetValue(GroupType group, int placedTiles, float diff)`: Tính con số mục tiêu (`3+`, `15+`, `50+`).
+* `CheckQuestFulfillment(Tile placedTile)`: Kiểm tra xem người chơi đã hoàn thành Quest chưa khi vừa đặt 1 ô mới.
+
+#### 📦 Class: `QuestWatcher` (Linh hồn theo dõi Quest trên Tile)
+* `SetState(QuestWatcherState state)`: Nạp trạng thái Quest từ file Save / Undo.
+* `GetConditionWatcher(int index)`: Lấy thông tin điều kiện hoàn thành (chứa con số `TargetValue`).
+* `HighlightWatchTarget(bool highlight)`: Bật/Tắt hiệu ứng phát sáng khu vực Quest cần làm.
+
+#### 📦 Class: `QuestConditionWatcher` (Bộ đếm chỉ tiêu)
+* `EvaluateProgress(int currentCount)`: Cập nhật tiến độ ghép (Ví dụ: `2/3`, `3/3`).
+* `TargetValue` *(Property)*: Trả về con số mục tiêu cần đạt (`3+`, `5+`...).
+
+---
+
+### 3. NHÓM 3: CÁC CLASS QUẢN LÝ XẤP BÀI VÀ ĐẶT BÀI (TILE STACK & PLACER)
+
+#### 📦 Class: `TileStack` (Xấp bài trên tay người chơi)
+* `InitializeStack()`: Tạo xấp bài khởi đầu khi bấm New Game.
+* `GetStackedTile(int index)`: Lấy bài tại vị trí chỉ định (`0` = Bài trên tay, `1` & `2` = Bài xem trước).
+* `InsertTile(int index, Tile tile, bool animate)`: Chèn một Tile mới vào xấp bài.
+* `ReplaceStackedTile(int index, Tile tile, bool updateSeed)`: Thay thế một ô bài trong xấp.
+* `SetHeight(int height, bool animate)`: Cài đặt số lượng bài trong xấp.
+* `SetInfinite(bool infinite)`: Bật/Tắt chế độ bài vô tận.
+
+#### 📦 Class: `TilePlacer` (Trình hạ bài xuống đất)
+* `PlaceTileDirectly(Tile tileToPlaceDirectly, Vector2Int gridPos)`: Đặt Tile xuống bản đồ tại vị trí tọa độ `gridPos`.
+* `ShowPreviewTileAt(TileSlot slot)`: Hiển thị hình ảnh xem trước tại ô đất đang di chuột.
+* `RemoveCurrentTile()`: Rút Tile đang cầm ra khỏi con trỏ chuột.
+* `DestroyTile(Tile tile)`: Xóa hủy Tile.
+* `CurrentTile` *(Property)*: Trả về đối tượng `Tile` thực tế đang dính trên con chuột.
+
+---
+
+### 4. NHÓM 4: CẤU HÌNH VÀ DỮ LIỆU ASSET (CONFIG & PRESETS)
+
+#### 📦 Class: `TileGenConfiguration` (ScriptableObject Cấu hình Bài Thường)
+* `globalGroupTypeProbabilities` *(Field)*: Mảng trọng số 5 loại đất (`Agri`, `Forest`, `Village`, `Train`, `Water`).
+* `allTilePresets` *(Field)*: Mảng chứa hàng trăm mẫu Tile Preset thiết kế sẵn.
+* `UpdateValues()`: Tính toán lại tỷ lệ bài thường khi chỉ số `Density` thay đổi.
+
+#### 📦 Class: `QuestSystemConfiguration` (ScriptableObject Cấu hình Quest)
+* `questTileCollections` *(Field)*: Mảng chứa danh sách mẫu Bài Quest.
+* `targetMultipliers` *(Field)*: Mảng hệ số nhân độ khó Target.
+* `GetRandomQuestTile(int questSeed)`: Hàm bốc thăm chọn mẫu Tile Quest theo PRNG.
+* `SetGlobalMultiplierValues(...)`: Cập nhật hệ số nhân Quest từ `ConfigString`.
+
+#### 📦 Class: `CustomModeInitializer` (Khởi chạy Chế độ Custom / Monthly)
+* `Initialize()`: Khởi tạo và nạp toàn bộ tham số từ `ConfigString` vào `TileGenerator` và `QuestManager`.
+
+---
+
+### 5. NHÓM 5: TRANG TRÍ ĐỒ HỌA DƯỚI TẦNG SUB-SEED (VISUALS)
+
+#### 📦 Class: `InstanceableVisual` (Xoay & Nghiêng cây cối/nhà cửa 3D)
+* `Randomize(int seed)`: Khởi tạo Local PRNG bằng `tile.Seed` để xoay cây cối 3D.
+* `ApplyBiomeConfiguration(...)`: Áp dụng màu sắc môi trường Biome.
+* `ChangeTileState(TileState targetState)`: Đổi trạng thái hiển thị (Bài trong xấp hay Bài đã đặt).
+
+#### 📦 Class: `SpawnRandomBasedOnSeed` (Cắm model 3D)
+* `Initialize()`: Re-seed local bằng `parentTile.Seed` để bốc model nhà/cây 3D đặt lên bề mặt.
