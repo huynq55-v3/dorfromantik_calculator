@@ -114,7 +114,6 @@ fn main() {
     println!("-----------------------------------------------------------------------------------------------------------------------");
     for n in 0..30 {
         let base_seed = master_seed.wrapping_add((n as i32).wrapping_mul(step));
-        // CHÚ Ý: Unity C# GenerateTile cho Normal Tile dùng trực tiếp base_seed (Random.InitState(num)), KHÔNG nhân 2 như Quest Tile!
         let mut tile_rng = UnityRandom::new(base_seed);
 
         let filter = TileGenFilter::None;
@@ -144,14 +143,24 @@ fn main() {
 
         let rot = tile_rng.range_int(0, 6) as usize;
 
-        // Rút địa hình cụ thể cho từng segment của Preset theo đúng Unity C#
+        // Rút địa hình cụ thể cho từng segment của Preset theo đúng Unity C# (kèm lọc SegmentsAdjacent)
         let mut seg_tokens = Vec::new();
+        let mut previous_group_codes: Vec<&str> = Vec::new();
+
         for seg in &selected_preset.segment_probabilities {
-            let valid_types: Vec<_> = seg
+            let mut valid_types: Vec<_> = seg
                 .possible_types
                 .iter()
                 .filter(|g| g.raw_probability > 0.0)
                 .collect();
+
+            // Lọc SegmentsAdjacent: Loại bỏ các loại địa hình trùng với segment kề liền trước đó
+            if !previous_group_codes.is_empty() {
+                valid_types.retain(|g| {
+                    let code = extract_group_type_code(&g.group_type, &g.name);
+                    !previous_group_codes.contains(&code)
+                });
+            }
 
             if !valid_types.is_empty() {
                 let total_w: f32 = valid_types.iter().map(|g| g.raw_probability).sum();
@@ -167,6 +176,7 @@ fn main() {
                 }
 
                 let g_code = extract_group_type_code(&chosen_g.group_type, &chosen_g.name);
+                previous_group_codes.push(g_code);
                 let seg_type_str = extract_seg_type_name(&seg.segment_type);
                 seg_tokens.push(format!("{}{}", seg_type_str, g_code));
             }
@@ -204,18 +214,19 @@ fn extract_seg_type_name(val: &serde_json::Value) -> String {
     if let Some(obj) = val.as_object() {
         if let Some(path_id) = obj.get("m_PathID").and_then(|id| id.as_i64()) {
             return match path_id {
-                41523 | 41527 => "1A".to_string(),
+                41523 => "1A".to_string(),
                 41524 => "2A".to_string(),
-                41525 => "2B".to_string(),
-                41526 => "2C".to_string(),
-                41528 => "3A".to_string(),
-                41529 => "3B".to_string(),
-                41530 => "3C".to_string(),
-                41531 => "3D".to_string(),
-                41532 => "4A".to_string(),
-                41533 => "4B".to_string(),
-                41534 => "4C".to_string(),
-                41535 => "5A".to_string(),
+                41527 => "2B".to_string(),
+                41528 => "2C".to_string(),
+                41529 => "3A".to_string(),
+                41530 => "3B".to_string(),
+                41531 => "3C".to_string(),
+                41532 => "3D".to_string(),
+                41533 => "4A".to_string(),
+                41534 => "4B".to_string(),
+                41535 => "4C".to_string(),
+                41525 => "5A".to_string(),
+                41526 => "6A".to_string(),
                 _ => "1A".to_string(),
             };
         }
