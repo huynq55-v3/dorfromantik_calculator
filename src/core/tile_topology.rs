@@ -282,6 +282,16 @@ fn parse_and_apply_segment(part: &str, edges: &mut [TerrainType; 6]) {
 
     let relative_offsets = get_relative_pattern_offsets(count, pattern);
 
+    // Nguyên tắc hình học 2C (Đối xứng qua tâm):
+    // Nếu ô đã có phần tử 2C tại vị trí [0, 3] và slot 1 đã có phần tử,
+    // phần tử 1-cạnh tiếp theo sẽ tự động vào slot 4 (đối diện slot 1) để giữ tính đối xứng hình học!
+    if count == 1 && edges[0] != TerrainType::Empty && edges[3] != TerrainType::Empty {
+        if edges[1] != TerrainType::Empty && edges[4] == TerrainType::Empty {
+            edges[4] = terrain;
+            return;
+        }
+    }
+
     for rotation in 0..6 {
         let fits = relative_offsets
             .iter()

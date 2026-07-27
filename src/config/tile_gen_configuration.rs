@@ -98,7 +98,7 @@ impl TileGenConfiguration {
         agri_prob: f32,
         water_prob: f32,
         train_prob: f32,
-        density: f32,
+        _density: f32,
     ) {
         for group in &mut self.global_group_type_probabilities {
             let name_lower = group.name.to_lowercase();
@@ -113,11 +113,6 @@ impl TileGenConfiguration {
             } else if name_lower.contains("train") {
                 group.raw_probability = train_prob;
             }
-        }
-
-        for preset in &mut self.all_tile_presets {
-            let exponent = (preset.occupied_edges + 1) as f32;
-            preset.raw_probability *= density.powf(exponent);
         }
 
         self.update_values();
@@ -148,13 +143,29 @@ impl TileGenConfiguration {
 
     pub fn update_all_tile_presets_list(&mut self) {
         let mut temp = Vec::new();
-        for col in &self.tile_preset_collections {
-            if let Some(sub_cols) = &col.sub_collections {
+        for col in &mut self.tile_preset_collections {
+            if let Some(sub_cols) = &mut col.sub_collections {
                 for sub in sub_cols {
+                    let sum_raw: f32 = sub.tile_presets.iter().map(|p| p.raw_probability).sum();
+                    for p in &mut sub.tile_presets {
+                        p.tile_preset_probability = if sum_raw == 0.0 {
+                            0.0
+                        } else {
+                            (p.raw_probability / sum_raw) * sub.sub_collection_probability
+                        };
+                    }
                     temp.extend(sub.tile_presets.clone());
                 }
             }
-            if let Some(presets) = &col.tile_presets {
+            if let Some(presets) = &mut col.tile_presets {
+                let sum_raw: f32 = presets.iter().map(|p| p.raw_probability).sum();
+                for p in presets.iter_mut() {
+                    p.tile_preset_probability = if sum_raw == 0.0 {
+                        0.0
+                    } else {
+                        (p.raw_probability / sum_raw) * col.collection_probability
+                    };
+                }
                 temp.extend(presets.clone());
             }
         }
