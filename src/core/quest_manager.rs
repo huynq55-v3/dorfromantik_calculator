@@ -14,7 +14,7 @@ impl QuestManager {
         }
     }
 
-    /// Kiểm tra xem lượt rút tới có sinh Quest Tile dựa theo đường cong tỉ lệ hay không
+    /// Kiểm tra xem lượt rút tới có sinh Quest Tile dựa theo đường cong tỉ lệ hay không (C#: value <= prob)
     pub fn should_generate_quest(
         &self,
         config: &QuestSystemConfiguration,
@@ -22,7 +22,7 @@ impl QuestManager {
         random_value: f32,
     ) -> bool {
         let prob = config.quest_tile_probability(self.active_quest_count, total_tiles_placed);
-        random_value < prob
+        random_value <= prob
     }
 
     pub fn add_quest(&mut self) {
@@ -34,6 +34,10 @@ impl QuestManager {
         if self.active_quest_count > 0 {
             self.active_quest_count -= 1;
         }
+    }
+
+    pub fn set_active_quest_count(&mut self, count: usize) {
+        self.active_quest_count = count;
     }
 
     pub fn reset(&mut self) {

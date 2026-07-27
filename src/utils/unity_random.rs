@@ -54,4 +54,15 @@ impl UnityRandom {
         let r = (self.next_u32() as u64) % diff;
         min + r as i32
     }
+
+    /// Hàm tráo bài Fisher-Yates mô phỏng 100% TileStack.Shuffle<T> trong Dorfromantik2.cs:L45589
+    pub fn shuffle<T>(&mut self, slice: &mut [T]) {
+        let len = slice.len();
+        for i in 0..len {
+            let num = self.range_int(i as i32, len as i32) as usize;
+            if num < len {
+                slice.swap(i, num);
+            }
+        }
+    }
 }

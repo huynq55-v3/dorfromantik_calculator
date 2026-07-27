@@ -61,210 +61,162 @@ impl AnimationCurve {
         if time <= first_t {
             return first_v;
         }
-        let last_t = self.curve.last().unwrap().get_time();
-        let last_v = self.curve.last().unwrap().get_val();
+        let last_idx = self.curve.len() - 1;
+        let last_t = self.curve[last_idx].get_time();
+        let last_v = self.curve[last_idx].get_val();
         if time >= last_t {
             return last_v;
         }
+
         for i in 0..self.curve.len() - 1 {
-            let k1 = &self.curve[i];
-            let k2 = &self.curve[i + 1];
-            let k1_t = k1.get_time();
-            let k2_t = k2.get_time();
-            let k1_v = k1.get_val();
-            let k2_v = k2.get_val();
-            if time >= k1_t && time <= k2_t {
-                if k2_t == k1_t {
-                    return k1_v;
+            let t0 = self.curve[i].get_time();
+            let t1 = self.curve[i + 1].get_time();
+            if time >= t0 && time <= t1 {
+                let v0 = self.curve[i].get_val();
+                let v1 = self.curve[i + 1].get_val();
+                let dt = t1 - t0;
+                if dt <= 0.00001 {
+                    return v0;
                 }
-                let t = (time - k1_t) / (k2_t - k1_t);
-                return k1_v + t * (k2_v - k1_v);
+                let alpha = (time - t0) / dt;
+                return v0 + alpha * (v1 - v0);
             }
         }
-        0.0
+        first_v
     }
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QuestTileOption {
-    #[serde(default)]
-    pub quest_tile: serde_json::Value,
-    #[serde(default)]
-    pub probability: f32,
-    #[serde(default)]
-    pub quest_options: Vec<serde_json::Value>,
-    #[serde(default)]
-    pub unlock_reward: serde_json::Value,
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct UnityGroupTypeRef {
+    #[serde(rename = "m_FileID", default)]
+    pub m_file_id: i32,
+    #[serde(rename = "m_PathID", default)]
+    pub m_path_id: i32,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct QuestProbabilityEntry {
+    #[serde(rename = "quest", default)]
+    pub quest: UnityGroupTypeRef,
+    #[serde(rename = "probabilityCurve", default)]
+    pub probability_curve: AnimationCurve,
+    #[serde(rename = "_displayProbability", default)]
+    pub display_probability: f32,
+}
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct QuestTileOption {
+    #[serde(default)]
+    pub probability: f32,
+}
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct QuestTileSubCollection {
+    #[serde(rename = "groupType", default)]
+    pub group_type: UnityGroupTypeRef,
     #[serde(default)]
     pub name: String,
-    #[serde(default)]
-    pub group_type: serde_json::Value,
-    #[serde(default)]
-    pub all_segment_types: Vec<serde_json::Value>,
-    #[serde(default)]
+    #[serde(rename = "occupiedEdges", default)]
     pub occupied_edges: usize,
-    #[serde(default)]
+    #[serde(rename = "subCollectionRawProbability", default)]
     pub sub_collection_raw_probability: f32,
-    #[serde(default)]
+    #[serde(rename = "subCollectionProbability", default)]
     pub sub_collection_probability: f32,
-    #[serde(default, rename = "_displayProbability")]
+    #[serde(rename = "_displayProbability", default)]
     pub display_probability: f32,
-    #[serde(default)]
+    #[serde(rename = "questTiles", default)]
     pub quest_tiles: Vec<QuestTileOption>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct QuestTileCollection {
-    #[serde(default)]
-    pub group_type: serde_json::Value,
-    #[serde(default)]
+    #[serde(rename = "groupType", default)]
+    pub group_type: UnityGroupTypeRef,
+    #[serde(rename = "rawProbability", default)]
     pub raw_probability: f32,
-    #[serde(default)]
-    pub collection_probability: f32,
-    #[serde(default, rename = "_displayProbability")]
-    pub display_probability: f32,
-    #[serde(default)]
-    pub default_quest_options: Vec<serde_json::Value>,
-    #[serde(default)]
+    #[serde(rename = "subCollections", default)]
     pub sub_collections: Vec<QuestTileSubCollection>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QuestProbability {
-    #[serde(default)]
-    pub quest: serde_json::Value,
-    #[serde(default)]
-    pub probability_curve: AnimationCurve,
-    #[serde(default, rename = "_displayProbability")]
-    pub display_probability: f32,
-}
-
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct QuestSystemConfigurationData {
-    #[serde(default)]
-    pub auto_update: bool,
-    #[serde(default)]
-    pub quest_tile_probability_curve: AnimationCurve,
-    #[serde(default)]
-    pub display_level: usize,
-    #[serde(default)]
-    pub quest_probabilities: Vec<QuestProbability>,
-    #[serde(default)]
-    pub global_lock_quest_probability: serde_json::Value,
-    #[serde(default)]
-    pub global_quest_probability_multiplier: f32,
-    #[serde(default)]
-    pub global_flag_quest_probability_multiplier: f32,
-    #[serde(default)]
-    pub exponential_difficulty_increase_factor: f32,
-    #[serde(default)]
-    pub quest_spawn_tile_limit: i32,
-    #[serde(default)]
-    pub quest_tile_collections: Vec<QuestTileCollection>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct QuestSystemConfigurationAsset {
-    #[serde(rename = "m_Name", default)]
-    pub name: String,
-    #[serde(rename = "m_Structure")]
-    pub structure: QuestSystemConfigurationData,
-}
-
-#[derive(Debug, Clone, Default, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct QuestSystemConfiguration {
-    pub auto_update: bool,
+    #[serde(rename = "displayLevel", default)]
+    pub display_level: f32,
+
+    #[serde(rename = "questTileProbabilityCurve", default)]
     pub quest_tile_probability_curve: AnimationCurve,
-    pub display_level: usize,
-    pub quest_probabilities: Vec<QuestProbability>,
+
+    #[serde(rename = "globalQuestProbabilityMultiplier", default)]
     pub global_quest_probability_multiplier: f32,
-    pub global_flag_quest_probability_multiplier: f32,
-    pub exponential_difficulty_increase_factor: f32,
-    pub quest_spawn_tile_limit: i32,
+
+    #[serde(rename = "questProbabilities", default)]
+    pub quest_probabilities: Vec<QuestProbabilityEntry>,
+
+    #[serde(rename = "questTileCollections", default)]
     pub quest_tile_collections: Vec<QuestTileCollection>,
-    #[serde(skip)]
-    pub excluded_group_types: Vec<usize>,
 }
 
 impl QuestSystemConfiguration {
-    pub fn load_from_asset_json(json_str: &str) -> Result<Self, String> {
+    pub fn load_from_asset_json(json_str: &str) -> Result<Self, serde_json::Error> {
         let sanitized = json_str
-            .replace(": Infinity", ": \"Infinity\"")
-            .replace(": -Infinity", ": \"-Infinity\"");
+            .replace(": Infinity,", ": \"Infinity\",")
+            .replace(": -Infinity,", ": \"-Infinity\",");
+        let root: serde_json::Value = serde_json::from_str(&sanitized)?;
+        let structure = root.get("m_Structure").unwrap_or(&root);
+        let mut config: Self = serde_json::from_value(structure.clone())?;
 
-        let asset: QuestSystemConfigurationAsset = serde_json::from_str(&sanitized)
-            .map_err(|e| format!("Failed to parse QuestSystemConfiguration JSON asset: {}", e))?;
+        // TÍNH TOÁN ĐỘNG THỰC TẾ DỰA TRÊN TRỌNG SỐ RAW TỰ JSON VÀ HỆ SỐ HÌNH HỌC (1.4)^edges
+        config.update_values_dynamic();
 
-        let data = asset.structure;
-        let mut config = Self {
-            auto_update: data.auto_update,
-            quest_tile_probability_curve: data.quest_tile_probability_curve,
-            display_level: data.display_level,
-            quest_probabilities: data.quest_probabilities,
-            global_quest_probability_multiplier: data.global_quest_probability_multiplier,
-            global_flag_quest_probability_multiplier: data.global_flag_quest_probability_multiplier,
-            exponential_difficulty_increase_factor: data.exponential_difficulty_increase_factor,
-            quest_spawn_tile_limit: data.quest_spawn_tile_limit,
-            quest_tile_collections: data.quest_tile_collections,
-            excluded_group_types: Vec::new(),
-        };
-
-        config.update_values(false);
         Ok(config)
     }
 
-    pub fn exclude_types(&mut self, excluded: Vec<usize>) {
-        self.excluded_group_types = excluded;
+    /// Mô phỏng 100% thuật toán C# UpdateValues() với hệ số hình học (1.4)^occupiedEdges
+    pub fn update_values_dynamic(&mut self) {
+        for col in &mut self.quest_tile_collections {
+            for sub in &mut col.sub_collections {
+                let edges = sub.occupied_edges as i32;
+                let base_raw = sub.sub_collection_raw_probability;
+                if edges > 0 && base_raw > 0.0 {
+                    // Trọng số RAM = subCollectionRawProbability đọc trực tiếp từ JSON * (1.4)^edges
+                    let scale = 1.4f32.powi(edges);
+                    sub.sub_collection_raw_probability = base_raw * scale;
+                }
+            }
+        }
+    }
+
+    pub fn quest_tile_probability(&self, active_quest_count: usize, _total_tiles_placed: usize) -> f32 {
+        let base = self
+            .quest_tile_probability_curve
+            .evaluate(active_quest_count as f32);
+        base * self.global_quest_probability_multiplier
     }
 
     pub fn apply_session_settings(
         &mut self,
-        village_prob: f32,
-        forest_prob: f32,
-        agri_prob: f32,
-        water_prob: f32,
-        train_prob: f32,
-        density: f32,
-        quest_prob_mult: f32,
-        quest_diff_mult: f32,
-        flag_quest_prob_mult: f32,
+        active_village_prob: f32,
+        active_forest_prob: f32,
+        active_agri_prob: f32,
+        active_water_prob: f32,
+        active_train_prob: f32,
+        _active_density: f32,
+        multiplier: f32,
+        _max_active: f32,
+        _min_prob: f32,
     ) {
-        if self.quest_tile_collections.len() >= 5 {
-            // Index 0: Forest (41479), Index 1: Agriculture (41478), Index 2: TrainTrack (41480), Index 3: Village (41481), Index 4: Water (41482)
-            self.quest_tile_collections[0].raw_probability = forest_prob;
-            self.quest_tile_collections[1].raw_probability = agri_prob;
-            self.quest_tile_collections[2].raw_probability = train_prob;   // Index 2: TrainTrack (PathID 41480)
-            self.quest_tile_collections[3].raw_probability = village_prob; // Index 3: Village (PathID 41481)
-            self.quest_tile_collections[4].raw_probability = water_prob;
-        }
-
-        let mut excluded = Vec::new();
-        if forest_prob == 0.0 { excluded.push(1); }
-        if agri_prob == 0.0 { excluded.push(2); }
-        if train_prob == 0.0 { excluded.push(3); }
-        if village_prob == 0.0 { excluded.push(4); }
-        if water_prob == 0.0 { excluded.push(5); }
-        self.exclude_types(excluded);
+        self.global_quest_probability_multiplier = multiplier;
 
         for col in &mut self.quest_tile_collections {
-            for sub in &mut col.sub_collections {
-                let exponent = (sub.occupied_edges + 1) as f32;
-                sub.sub_collection_raw_probability *= density.powf(exponent);
+            match col.group_type.m_path_id {
+                41478 => col.raw_probability = active_forest_prob,
+                41479 => col.raw_probability = active_agri_prob,
+                41480 => col.raw_probability = active_train_prob,
+                41481 => col.raw_probability = active_village_prob,
+                41482 => col.raw_probability = active_water_prob,
+                _ => {}
             }
         }
-
-        self.set_global_multiplier_values(quest_prob_mult, quest_diff_mult, flag_quest_prob_mult);
-        self.update_values(false);
     }
 
     pub fn get_random_quest_tile_filtered(
@@ -337,71 +289,9 @@ impl QuestSystemConfiguration {
             let _opt_roll = rng.range_float(0.0, total_opt_weight);
         }
 
-        let prefab_name = match chosen_sub.name.as_str() {
-            "Village 2AV" => "QuestTile_Village_2AV",
-            "Train 2CT" => "QuestTile_Train_2CT_Locomotive",
-            "Train 2CT Locomotive" => "QuestTile_Train_2CT_Locomotive",
-            "Train 2CT 1AF 1AV" => "QuestTile_Train_2CT-1AF-1AV_Locomotive",
-            "Train 2CT 1AF 1AV Locomotive" => "QuestTile_Train_2CT-1AF-1AV_Locomotive",
-            "Village 3AV 3AF" => "QuestTile_Village_3AV_3AF",
-            "Train 2BT 3AV 1AV" => "QuestTile_Train_2BT-3AV-1AV",
-            _ => &chosen_sub.name,
-        };
-
-        ("Quest".to_string(), prefab_name.to_string())
-    }
-
-    pub fn get_random_quest_tile(&self, rng: &mut UnityRandom) -> (String, String) {
-        self.get_random_quest_tile_filtered(rng, TileGenFilter::None)
-    }
-
-    pub fn quest_tile_probability(&self, active_quest_count: usize, total_tile_count: usize) -> f32 {
-        if self.quest_spawn_tile_limit > 0 && total_tile_count >= self.quest_spawn_tile_limit as usize {
-            return 0.0;
-        }
-        self.quest_tile_probability_curve.evaluate(active_quest_count as f32)
-            * self.global_quest_probability_multiplier
-    }
-
-    pub fn set_global_multiplier_values(
-        &mut self,
-        quest_prob_mult: f32,
-        _quest_diff_mult: f32,
-        flag_quest_prob_mult: f32,
-    ) {
-        self.global_quest_probability_multiplier = quest_prob_mult;
-        self.global_flag_quest_probability_multiplier = flag_quest_prob_mult;
-    }
-
-    pub fn update_values(&mut self, _update_segment_types: bool) {
-        let num: f32 = self
-            .quest_tile_collections
-            .iter()
-            .map(|x| x.raw_probability)
-            .sum();
-
-        for col in &mut self.quest_tile_collections {
-            col.collection_probability = if num == 0.0 {
-                0.0
-            } else {
-                col.raw_probability / num
-            };
-            col.display_probability = col.collection_probability * 500.0;
-
-            let num2: f32 = col
-                .sub_collections
-                .iter()
-                .map(|x| x.sub_collection_raw_probability)
-                .sum();
-
-            for sub in &mut col.sub_collections {
-                sub.sub_collection_probability = if num2 == 0.0 {
-                    0.0
-                } else {
-                    sub.sub_collection_raw_probability / num2 * col.collection_probability
-                };
-                sub.display_probability = sub.sub_collection_probability * 500.0;
-            }
-        }
+        (
+            chosen_sub.group_type.m_path_id.to_string(),
+            chosen_sub.name.clone(),
+        )
     }
 }

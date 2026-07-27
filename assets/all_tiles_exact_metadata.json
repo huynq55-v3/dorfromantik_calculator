@@ -1,0 +1,1463 @@
+{
+  "tiles": [
+    {
+      "tileType": "BASE_TILE",
+      "name": "0A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "1A_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "1A_1A_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "1A_1A_1A_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A_1A_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A_2A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A_2A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2A_2A_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2B",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2B_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2B_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2B_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2B_1A_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2B_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2B_2A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2B_2A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C_1A_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C_2A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C_2A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "2C_2A_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A_2A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A_2B",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A_2B_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3A_3A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3B",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3B_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3B_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3B_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3B_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3B_2A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3C",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3C_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3C_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3C_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3C_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3C_2A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3D",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3D_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3D_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "3D_1A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4A_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4A_2A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4B",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4B_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4B_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4C",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4C_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "4C_1A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "5A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "5A_1A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "BASE_TILE",
+      "name": "6A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_1AF",
+      "subCollection": "Forest 1AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_1AF_Deer",
+      "subCollection": "Forest 1AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_1AF_Bear",
+      "subCollection": "Forest 1AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_1AF_Boar",
+      "subCollection": "Forest 1AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_1AF_2AW",
+      "subCollection": "Forest 1AF 2AW",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_1AF_2AW_Deer",
+      "subCollection": "Forest 1AF 2AW",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_2AF",
+      "subCollection": "Forest 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_2AF_Deer",
+      "subCollection": "Forest 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_2AF_Bear",
+      "subCollection": "Forest 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_2AF_Boar",
+      "subCollection": "Forest 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_3AF",
+      "subCollection": "Forest 3AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_3AF_Deer",
+      "subCollection": "Forest 3AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_3AF_Bear",
+      "subCollection": "Forest 3AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_3AF_Boar",
+      "subCollection": "Forest 3AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_4AF",
+      "subCollection": "Forest 4AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_4AF_Ruin",
+      "subCollection": "Forest 4AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_6AF",
+      "subCollection": "Forest 6AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_6AF_Deer",
+      "subCollection": "Forest 6AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_6AF_Ruin",
+      "subCollection": "Forest 6AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_6AF_Bear",
+      "subCollection": "Forest 6AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Forest_6AF_Boar",
+      "subCollection": "Forest 6AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_2AA",
+      "subCollection": "Fields 2AA",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_2AA_2AV_1AV",
+      "subCollection": "Fields 2AA 2AV 1AV",
+      "Village": 2,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_2AA_4AF",
+      "subCollection": "Fields 2AA 4AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_2AA_4AF_Windmill",
+      "subCollection": "Fields 2AA 4AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_2AA_4AF_Granary",
+      "subCollection": "Fields 2AA 4AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_2AA_4AF_BigTree",
+      "subCollection": "Fields 2AA 4AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_3AA_1AV",
+      "subCollection": "Fields 3AA 1AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_3AA_1AV_Windmill",
+      "subCollection": "Fields 3AA 1AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_3AA_1AV_Granary",
+      "subCollection": "Fields 3AA 1AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_4BA_1AF_1AF",
+      "subCollection": "Fields 4BA 1AF 1AF",
+      "Village": 0,
+      "Forest": 2,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_4BA_1AF_1AF_BigTree",
+      "subCollection": "Fields 4BA 1AF 1AF",
+      "Village": 0,
+      "Forest": 2,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_4AA_2AF",
+      "subCollection": "Fields 4A 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_4AA_2AF_Granary",
+      "subCollection": "Fields 4A 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_6AA",
+      "subCollection": "Fields 6A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_6AA_Windmill",
+      "subCollection": "Fields 6A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Agriculture_6AA_BigTree",
+      "subCollection": "Fields 6A",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_2AV",
+      "subCollection": "Village 2AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_3AV_3AF",
+      "subCollection": "Village 3AV 3AF",
+      "Village": 1,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_3AV_3AF_Fountain",
+      "subCollection": "Village 3AV 3AF",
+      "Village": 1,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_3AV_3AF_Tower",
+      "subCollection": "Village 3AV 3AF",
+      "Village": 1,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_3AV_3AF_Fox",
+      "subCollection": "Village 3AV 3AF",
+      "Village": 1,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_4BV_1AF_1AF",
+      "subCollection": "Village 4BV 1AF 1AF",
+      "Village": 1,
+      "Forest": 2,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_4BV_1AF_1AF_Fountain",
+      "subCollection": "Village 4BV 1AF 1AF",
+      "Village": 1,
+      "Forest": 2,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_4BV_1AF_1AF_Tower",
+      "subCollection": "Village 4BV 1AF 1AF",
+      "Village": 1,
+      "Forest": 2,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_4BV_1AF_1AF_Fox",
+      "subCollection": "Village 4BV 1AF 1AF",
+      "Village": 1,
+      "Forest": 2,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_5AV_1AF",
+      "subCollection": "Village 5AV 1AF",
+      "Village": 1,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_5AV_1AF_Fox",
+      "subCollection": "Village 5AV 1AF",
+      "Village": 1,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_6AV",
+      "subCollection": "Village 6AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_6AV_Fountain",
+      "subCollection": "Village 6AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Village_6AV_Tower",
+      "subCollection": "Village 6AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Train_2BT-3AF-1AF",
+      "subCollection": "Train 2BT 3AF 1AF",
+      "Village": 0,
+      "Forest": 2,
+      "Agriculture": 0,
+      "TrainTracks": 1,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Train_2BT-2AA-1AA",
+      "subCollection": "Train 2BT 3AA 1AA",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 2,
+      "TrainTracks": 1,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Train_2BT-3AV-1AV",
+      "subCollection": "Train 2BT 3AV 1AV",
+      "Village": 2,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 1,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Train_2CT",
+      "subCollection": "Train 2CT",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 1,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Train_2CT_Locomotive",
+      "subCollection": "Train 2CT",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 1,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Train_2CT-1AF-1AV",
+      "subCollection": "Train 2CT 1AF 1AV",
+      "Village": 1,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 1,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Train_2CT-1AF-1AV_Locomotive",
+      "subCollection": "Train 2CT 1AF 1AV",
+      "Village": 1,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 1,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Train_4CT_1AF_1AF",
+      "subCollection": "_DEPRECATED (usedForOldSavegames)",
+      "Village": 0,
+      "Forest": 2,
+      "Agriculture": 0,
+      "TrainTracks": 1,
+      "Water": 0
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2BW_3AF_1AF",
+      "subCollection": "Water 2B 1AF 3AF",
+      "Village": 0,
+      "Forest": 2,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2BW_3AF_1AF_Boat",
+      "subCollection": "Water 2B 1AF 3AF",
+      "Village": 0,
+      "Forest": 2,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW",
+      "subCollection": "Water 2CW",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_Boat",
+      "subCollection": "Water 2CW",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_2AV_1AV",
+      "subCollection": "Water 2CW 2AV 2AV",
+      "Village": 2,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_2AV_2AV_Watermill",
+      "subCollection": "Water 2CW 2AV 2AV",
+      "Village": 2,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_2AF_1AA",
+      "subCollection": "Water 2CW 2AF 1AA",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_2AF_1AA_Watermill",
+      "subCollection": "Water 2CW 2AF 1AA",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_2AA_1AV",
+      "subCollection": "Water 2CW 2AA 1AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_2AA_1AV_Watermill",
+      "subCollection": "Water 2CW 2AA 1AV",
+      "Village": 1,
+      "Forest": 0,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_2AF_2AA",
+      "subCollection": "Water 2CW 2AF 2AA",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_2CW_2AF_2AA_Beaver",
+      "subCollection": "Water 2CW 2AF 2AA",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 1,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_3AW_3AF",
+      "subCollection": "Water 3AW 3AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_3AW_3AF_Beaver",
+      "subCollection": "Water 3AW 3AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_3AW_3AF_SwanGoose",
+      "subCollection": "Water 3AW 3AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_4AW_2AF",
+      "subCollection": "Water 4AW 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_4AW_2AF_Beaver",
+      "subCollection": "Water 4AW 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_4AW_2AF_SwanGoose",
+      "subCollection": "Water 4AW 2AF",
+      "Village": 0,
+      "Forest": 1,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_6AW",
+      "subCollection": "Water 6AW",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_6AW_Boat",
+      "subCollection": "Water 6AW",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_6AW_Beaver",
+      "subCollection": "Water 6AW",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_Water_6AW_Ruin",
+      "subCollection": "Water 6AW",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 0,
+      "Water": 1
+    },
+    {
+      "tileType": "QUEST_TILE",
+      "name": "QuestTile_WaterTrainStation_6AW_6AT",
+      "subCollection": "_DEPRECATED (usedForOldSavegames)",
+      "Village": 0,
+      "Forest": 0,
+      "Agriculture": 0,
+      "TrainTracks": 1,
+      "Water": 1
+    }
+  ]
+}

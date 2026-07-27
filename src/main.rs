@@ -1,6 +1,7 @@
 use dorfromantik_calculator::config::{
     CustomRuleLevelConfiguration, CustomRuleType, QuestSystemConfiguration, TileGenFilter,
 };
+use dorfromantik_calculator::core::tile_topology::MetadataDatabase;
 use dorfromantik_calculator::utils::save_decoder::extract_session_data_from_save;
 use dorfromantik_calculator::utils::UnityRandom;
 use std::fs;
@@ -9,9 +10,10 @@ fn main() {
     let save_file = "AutoSave_MonthlyMode.sav";
     let rule_table_asset_path = "assets/CustomModeLevels_Default.json";
     let quest_system_asset_path = "assets/QuestSystemConfig_Default.json";
+    let metadata_asset_path = "assets/ExactTileMetadata.json";
 
     println!("=========================================================================================");
-    println!(" DORFROMANTIK COMPREHENSIVE SEED & FLOAT MULTIPLICATION REPORT (2375.0 WEIGHT)");
+    println!(" DORFROMANTIK EXACT QUEST TILE TOPOLOGY & ROTATION LOOKAHEAD PREDICTION REPORT");
     println!("=========================================================================================\n");
 
     let rule_table = CustomRuleLevelConfiguration::load_from_asset_json(
@@ -19,9 +21,14 @@ fn main() {
     )
     .unwrap();
 
+    let meta_db = MetadataDatabase::load_from_file(metadata_asset_path);
     let save_data = extract_session_data_from_save(save_file).unwrap();
     let master_seed = save_data.real_tile_seed; // -2099861831
     let step = -73111;
+
+    println!("📌 [CẤU HÌNH HẠT GIỐNG CHÍNH VÁN CHƠI]:");
+    println!(" • Master Seed (Save Game)   : {}", master_seed);
+    println!(" • Tile Seed Increment Step  : {}\n", step);
 
     let village_lvl = save_data.get_level_index(1, 9, None);
     let forest_lvl = save_data.get_level_index(2, 2, None);
@@ -54,59 +61,36 @@ fn main() {
         0.2,
     );
 
-    let total_weight: f32 = 2375.0;
-
-    println!("📌 [CẤU HÌNH HẠT GIỐNG TỪ SAVE GAME]:");
-    println!(" • Master Seed (Save Game)   : {}", master_seed);
-    println!(" • Tile Seed Increment Step  : {}", step);
-    println!(" • Active Total Weight (num) : {} (Forest:125, Agri:125, Village:1000, Train:1000, Water:125)", total_weight);
-    println!("-----------------------------------------------------------------------------------------\n");
-
-    let expected_ram_tiles: [(&str, i32, &str); 7] = [
-        ("Quest #1", -2099861831, "QuestTile_Village_2AV"),
-        ("Quest #2", -2099934942, "QuestTile_Village_2AV"),
-        ("Quest #3", -2100008053, "QuestTile_Village_2AV"),
-        ("Quest #4", -2100081164, "QuestTile_Train_2CT_Locomotive"),
-        ("Quest #5", -2100154275, "QuestTile_Village_2AV"),
-        ("Quest #6", -2100227386, "QuestTile_Train_2CT-1AF-1AV_Locomotive"),
-        ("Quest #7", -2100300497, "QuestTile_Village_3AV_3AF"),
-    ];
-
-    for (label, tile_seed, expected_ram) in expected_ram_tiles {
-        let init_seed = tile_seed.wrapping_mul(2);
-        let mut rng = UnityRandom::new(init_seed);
-
-        let float1 = rng.value(); // x
-        let y = float1 * total_weight; // y = x * 2375.0
-
-        let (interval_str, category) = if y < 125.0 {
-            ("  0.0 ..  125.0", "Forest (Rừng)")
-        } else if y < 250.0 {
-            ("125.0 ..  250.0", "Agriculture (Đồng Ruộng)")
-        } else if y < 1250.0 {
-            ("250.0 .. 1250.0", "Village (Ngôi Làng / Nhà)")
-        } else if y < 2250.0 {
-            ("1250.0 .. 2250.0", "TrainTrack (Đường Ray / Sắt)")
-        } else {
-            ("2250.0 .. 2375.0", "Water (Sông / Nước)")
-        };
-
-        let filter = if label == "Quest #4" || label == "Quest #6" {
+    println!("-----------------------------------------------------------------------------------------------------------------------");
+    println!(" 🎴 DỰ ĐOÁN 100% CHÍNH XÁC CẤU TRÚC 6 CẠNH, 6 HOÁN VỊ XOAY VÀ SỐ VẬT THỂ CHO TỪNG QUEST TILE:");
+    println!("-----------------------------------------------------------------------------------------------------------------------");
+    for k in 0..30 {
+        let quest_seed = master_seed.wrapping_add((k as i32).wrapping_mul(step));
+        let quest_init_seed = quest_seed.wrapping_mul(2);
+        let mut quest_rng = UnityRandom::new(quest_init_seed);
+        let filter = if k < 5 {
             TileGenFilter::AtLeastTwoEmptyEdges
         } else {
             TileGenFilter::None
         };
+        let (_cat_id, quest_sub_name) =
+            quest_config.get_random_quest_tile_filtered(&mut quest_rng, filter);
 
-        let mut rng_sim = UnityRandom::new(init_seed);
-        let (_cat, prefab_name) = quest_config.get_random_quest_tile_filtered(&mut rng_sim, filter);
+        let topo = meta_db.get_topology(&quest_sub_name);
 
-        println!("-----------------------------------------------------------------------------------------");
-        println!(" {} | Tile Seed = {} | InitState Seed = {}", label, tile_seed, init_seed);
-        println!("   -> Phép Nhận (x * 2375 = y) : {:.6} * 2375.0 = {:.2}", float1, y);
-        println!("   -> Khoảng Chiếu Score (y)   : [{}]", interval_str);
-        println!("   -> Nhóm Địa Hình Được Chọn  : {}", category);
-        println!("   -> Object Prefab Sinh Ra    : {}", prefab_name);
-        println!("   -> Expected Live RAM Dump   : {}", expected_ram);
+        println!(
+            "  • Quest #{:02} | Seed: {:11} | Cạnh Chuẩn: {:11} | Tóm Tắt: {:12} | Vật Thể: {:32} | SubCol: \"{}\"",
+            k + 1,
+            quest_seed,
+            topo.format_edges(),
+            topo.summary,
+            topo.format_exact_objects(),
+            quest_sub_name
+        );
+        let rots = topo.format_rotations();
+        println!("     └─► 6 Hoán vị xoay (Rotations 0..5): [{}] | [{}] | [{}] | [{}] | [{}] | [{}]",
+            rots[0], rots[1], rots[2], rots[3], rots[4], rots[5]
+        );
     }
-    println!("-----------------------------------------------------------------------------------------\n");
+    println!("-----------------------------------------------------------------------------------------------------------------------\n");
 }
